@@ -12,32 +12,35 @@
 <body>
 
     <form>
-        <h1>Cadastro de conta</h1>
+      <h1>Cadastro de conta</h1>
+    
+      <div class="image"></div>
+    
+      <label for="username">
+        Nome:
+        <input type="text" id="username">
+      </label>
 
-        <div class="image"></div>
+      <label for="password">
+        Senha:
+        <input type="password" id="password">
+      </label>
 
-        <label>
-      Nome:
-      <input type="text" id="username">
-    </label>
-        <label>
-      Senha:
-      <input type="password" id="password">
-    </label>
-        <label>
-      Repetir senha:
-      <input type="password" id="password-2">
-    </label>
-        <label>
-      E-mail:
-      <input type="email">
-    </label>
+      <label for="password-2">
+        Repetir senha:
+        <input type="password" id="password-2">
+      </label>
 
-        <button type="submit">Criar Conta</button>
-
-        <div class="form-footer">
-            <p>ToDo</p>
-        </div>
+      <label for="email">
+        E-mail:
+        <input type="email" id="email">
+      </label>
+    
+      <button type="submit">Criar Conta</button>
+    
+      <div class="form-footer">
+        <p>ToDo</p>
+      </div>
     </form>
 
     <script src="./js/appIndex.js"></script>
