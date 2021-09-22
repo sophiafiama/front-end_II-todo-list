@@ -5,9 +5,9 @@
 ### Integrantes:
 
 - [Leonardo Martins]
-- [Silvano Araujo]
-- [Sophia Fiama]
-- [Thays Gama]
+- [Silvano Araujo] (https://github.com/Silvanoeng)
+- [Sophia Fiama] (https://github.com/sophiafiama)
+- [Thays Gama] (https://github.com/thaysgama)
 - [Vitor Galbier]
 
 ### Projeto to-do Parte I e II:
