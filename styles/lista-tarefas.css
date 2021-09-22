@@ -189,29 +189,30 @@ a {
     z-index: 20;
 }
 
-.titulo-concluida {
+.titulo-concluida,
+.tarefas-concluidas {
     display: flex;
     flex-direction: column;
     width: 70%;
     list-style: none;
-    margin: 2em 15%;
+    margin: 2em auto;
 }
 
-.titulo-concluida .not-done {
+.tarefas-concluidas .not-done {
     background-color: lightgrey;
     border-color: grey;
 }
 
-.titulo-concluida .not-done::before,
-.titulo-concluida .not-done::after {
+.tarefas-concluidas .not-done::before,
+.tarefas-concluidas .not-done::after {
     background-color: grey !important;
 }
 
-.titulo-concluida .tarefa .descripcion {
+.tarefas-concluidas .tarefa .descripcion {
     background-color: rgb(228, 228, 228);
 }
 
-.titulo-concluida .tarefa .descripcion .nome {
+.tarefas-concluidas .tarefa .descripcion .nome {
     color: grey;
     text-decoration: line-through;
 }
