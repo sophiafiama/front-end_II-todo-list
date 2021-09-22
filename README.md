@@ -22,7 +22,7 @@ Se atente às instruções e bom trabalho. O entregável é uma aplicação de t
 1. A primeira página deve ter um formulário com os inputs: 
 - a - Data de criação: o usuário não poderá alterar esse input, mas ele deve ser exibido.
 - b - Data limite da tarefa: data que o usuário deseja terminar aquela tarefa.
-- c - escrição: texto da tarefa.
+- c - Descrição: texto da tarefa.
 - d - Botão de submit.
 
 2.Validações:
