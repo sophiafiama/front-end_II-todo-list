@@ -8,7 +8,7 @@
 - [Silvano Araujo] (https://github.com/Silvanoeng)
 - [Sophia Fiama] (https://github.com/sophiafiama)
 - [Thays Gama] (https://github.com/thaysgama)
-- [Vitor Galbier](https://github.com/VitorGalbier)
+- [Vitor Galbier] (https://github.com/VitorGalbier)
 
 ## Projeto to-do Parte I e II:
 
