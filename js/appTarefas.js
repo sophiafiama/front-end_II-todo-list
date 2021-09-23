@@ -2,7 +2,8 @@ const usuario = localStorage.getItem('usuario');
 const nomeUsuario = document.getElementById('nome-usuario');
 const tarefasPendentes = document.querySelector('.tarefas-pendentes');
 const tarefasConcluidas = document.querySelector('.tarefas-concluidas');
-const btnAddTarefa = document.getElementById('adicionar-tarefa')
+const btnAddTarefa = document.getElementById('adicionar-tarefa');
+const notDoneAll = document.querySelectorAll('.not-done');
 
 
 window.onload =  function(){
@@ -16,28 +17,30 @@ window.onload =  function(){
         //recebe o objeto e percorre os 20 primeiros elementos pegando suas informações e transformando em cards
         .then((json)=> {
             for (let i = 0; i < 20; i++) {
+                let texto = `${json[i].id} - ${json[i].title}`
                 if(json[i].completed == false){
-                    createCard(tarefasPendentes, json[i].title)
+                    createCard(tarefasPendentes, texto)
                 } else{
-                    createCard(tarefasConcluidas, json[i].title)
+                    createCard(tarefasConcluidas, texto)
                 }
             }
     })
 }
 
 
-
+let contador = 1;
 // função para criar novas tarefas - createCard(tarefasPendentes) - como o texto está undefined, ele vai puxar o value do input 
 // função para criar tarefas a partir da API(novas e concluidas) - createCard(tarefasPendentes, textoAPI) || createCard(tarefasConcluidas, textoAPI)
 let createCard = (elementoPai, textoTarefa) =>{
     
     let novaTarefa;
     if (textoTarefa == undefined){
-        novaTarefa = document.getElementById('nova-tarefa').value;
+        novaTarefa = `${contador} - ${document.getElementById('nova-tarefa').value}`;
     } else{
         novaTarefa=textoTarefa;
     }
 
+    contador++;
     //função para pegar a data do dia formatada
     let dataDia = function(){
         let today = new Date();
@@ -66,3 +69,4 @@ btnAddTarefa.addEventListener('click', function (){
     event.preventDefault();
     createCard(tarefasPendentes)
 });
+
