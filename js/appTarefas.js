@@ -3,7 +3,6 @@ const nomeUsuario = document.getElementById('nome-usuario');
 const tarefasPendentes = document.querySelector('.tarefas-pendentes');
 const tarefasConcluidas = document.querySelector('.tarefas-concluidas');
 const btnAddTarefa = document.getElementById('adicionar-tarefa');
-const notDoneAll = document.querySelectorAll('.not-done');
 
 
 window.onload =  function(){
@@ -47,11 +46,11 @@ let createCard = (elementoPai, textoTarefa) =>{
         let dd = today.getDate();
         let mm = today.getMonth()+1; //Janeiro é 0.
         //formata ano para pegar apenas os dois últimos dígitos
-        let yyyy = today.getFullYear().toString().substr(-2);
+        let yy = today.getFullYear().toString().substr(-2);
         //adiciona zero se o mês tiver apenas um dígito
         if(dd<10) dd='0'+dd;
         if(mm<10) mm='0'+mm;
-        return (dd+'/'+mm+'/'+yyyy);
+        return (dd+'/'+mm+'/'+yy);
         };
 
     elementoPai.innerHTML += `<li class="tarefa">
@@ -70,3 +69,28 @@ btnAddTarefa.addEventListener('click', function (){
     createCard(tarefasPendentes)
 });
 
+// evento para remover elemento de uma div e inserir em outra 
+tarefasPendentes.addEventListener('click', function (event){
+    //se alvo do evento for elemento de classe 'not-done'
+    if (event.target.classList.contains('not-done')) {
+        //seleciona e armazena o elemento pai (div tarefa) para que possamos realoca-la
+        let tarefa = event.target.parentNode;
+        //remove a div tarefa 
+        tarefa.parentNode.removeChild(tarefa);
+        //realoca de acordo com o novo pai selecionado
+        tarefasConcluidas.appendChild(tarefa)
+    }
+})
+
+// evento para remover elemento de uma div e inserir em outra
+tarefasConcluidas.addEventListener('click', function (event){
+    //se alvo do evento for elemento de classe 'not-done'
+    if (event.target.classList.contains('not-done')) {
+        //seleciona e armazena o elemento pai (div tarefa) para que possamos realoca-la
+        let tarefa = event.target.parentNode;
+        //remove a div tarefa 
+        tarefa.parentNode.removeChild(tarefa);
+        //realoca de acordo com o novo pai selecionado
+        tarefasPendentes.appendChild(tarefa)
+    }
+})
