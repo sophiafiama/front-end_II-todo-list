@@ -4,11 +4,11 @@
 
 ### Integrantes:
 
-- [Leonardo Martins] (https://github.com/leodsmartins/)
-- [Silvano Araujo] (https://github.com/Silvanoeng)
-- [Sophia Fiama] (https://github.com/sophiafiama)
-- [Thays Gama] (https://github.com/thaysgama)
-- [Vitor Galbier] (https://github.com/VitorGalbier)
+- [Leonardo Martins](https://github.com/leodsmartins/)
+- [Silvano Araujo](https://github.com/Silvanoeng)
+- [Sophia Fiama](https://github.com/sophiafiama)
+- [Thays Gama](https://github.com/thaysgama)
+- [Vitor Galbier](https://github.com/VitorGalbier)
 
 ## Projeto to-do Parte I e II:
 
