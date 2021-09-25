@@ -42,8 +42,16 @@ form:after {
 input {
   width: 100%;
   padding: .4rem .5rem;
-  background-color: var(--app-grey);
-  border: 1px solid var(--app-grey);
+  background-color: var(--input-grey);
+  border: 1px solid var(--bordaInput-grey);
+  border-radius: .2rem;
+}
+
+input#naoValido {
+  width: 100%;
+  padding: .4rem .5rem;
+  background-color: var(--input-grey);
+  border: 1px solid var(--bordaInput-grey);
   border-radius: .2rem;
 }
 
@@ -66,6 +74,7 @@ button {
   margin-top: 5rem;
   font-weight: 400;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .form-footer {
