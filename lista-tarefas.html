@@ -6,28 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/lista-tarefas.css">
+    <script src="https://kit.fontawesome.com/0dd8173ea9.js" crossorigin="anonymous"></script>
     <title>ToDo</title>
 </head>
 
 <body>
+    <div class="loading-mask">
+        <div class="loading"></div>
+    </div>
+
     <header>
         <nav>
             <a href="#">My ToDo's</a>
         </nav>
 
+        
+
         <div class="user-info">
             <p id="nome-usuario">username</p>
             <div class="user-image"></div>
+
+            <input type="checkbox" name="switch" id="switch">
+            <label class="label-dark" for="switch"></label>
+            
         </div>
+
+
     </header>
 
 
     <form class="nova-tarefa">
         <div class="not-done "></div>
         <input type="text" placeholder="Nova tarefa" id="nova-tarefa">
+        <div id="validar"></div>
         <button id="adicionar-tarefa">
-      <img src="./assets/plus.png" alt="Adicionar Tarefa">
-    </button>
+            <img src="./assets/plus.png" alt="Adicionar Tarefa">
+        </button>
     </form>
 
     
@@ -79,6 +93,7 @@
             </div>
         </li>
     </ul>
+    <script src="./js/appstyles.js"></script>
     <script src="./js/appTarefas.js"></script>
 </body>
 

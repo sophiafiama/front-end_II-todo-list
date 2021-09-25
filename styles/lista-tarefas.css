@@ -1,11 +1,59 @@
 @import url('./common.css');
+
+
 header {
     display: flex;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
     box-shadow: 0px 3px 5px lightgrey;
-    padding: 0 3rem;
+    padding: 0 1rem;
     margin-bottom: 2rem;
 }
+
+/* BOTÃO DARK MODE */
+
+input[type="checkbox"] {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  .label-dark  {
+    width: 3rem;
+    height: 2rem;
+    display:block;
+    background-color: black;
+    border-radius: 1rem;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 0 2rem #477a8550;
+    cursor: pointer;
+  }
+  .label-dark::after {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    background-color: white;
+    position: absolute;
+    border-radius: 1rem;
+    top: 0.5rem;
+    left: 0.5rem;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"]:checked + .label-dark:after {
+    left: calc(100% - 1rem);
+    transform: translateX(-20%);
+  }
+  
+  input[type="checkbox"]:checked + .label-dark  {
+    background-color: #243d42;
+  }
+  
+  .label-dark :active:after {
+    width: 1.5rem;
+  }
+  
 
 a {
     display: block;
@@ -35,6 +83,9 @@ a {
     opacity: .3;
     margin-left: .7rem;
 }
+.user-image{
+    margin-right: 1rem;
+}
 
 
 /* Novas tarefa ----------------------------------------------------------- */
@@ -46,7 +97,7 @@ a {
     background-color: white;
     width: 80%;
     margin: 0 10%;
-    padding: 1em;
+    padding: 1.5rem;
     box-shadow: 2px 2px 10px lightgrey;
     border-radius: .2rem;
     z-index: 20;
@@ -57,7 +108,7 @@ a {
     flex: 1;
     border-bottom: 1px solid lightgrey;
     border-radius: 0;
-    padding: .3rem;
+    padding: .4rem;
     font-size: 1.1rem;
 }
 
@@ -96,6 +147,14 @@ a {
     margin-right: 1rem;
     border-radius: 50%;
     cursor: pointer;
+}
+
+#validar{
+    position: absolute;
+    color: var(--secondary);
+    font-size: .75rem;
+    bottom: 5px;
+    left: 5rem;
 }
 
 
@@ -215,4 +274,38 @@ a {
 .tarefas-concluidas .tarefa .descripcion .nome {
     color: grey;
     text-decoration: line-through;
+}
+
+/* Barra de progesso ----------------------------------------------------------- */
+
+.loading-mask{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background:linear-gradient(90deg, var(--primary), var(--secondary));
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    z-index: 100;
+}
+
+.loading {
+    position: absolute;
+    width:120px;
+    height:22px;
+    border-radius: 20px;
+    color: white;
+    border:2px solid;
+}
+.loading::before {
+    content:"";
+    position: absolute;
+    margin:2px;
+    inset:0 100% 0 0;
+    border-radius: inherit;
+    background:currentColor;
+    animation:l1 1.5s infinite;
+}
+@keyframes l1 {
+      100% {inset:0}
 }
