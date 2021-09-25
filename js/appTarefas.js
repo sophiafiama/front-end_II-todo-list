@@ -3,6 +3,7 @@ const nomeUsuario = document.getElementById('nome-usuario');
 const tarefasPendentes = document.querySelector('.tarefas-pendentes');
 const tarefasConcluidas = document.querySelector('.tarefas-concluidas');
 const btnAddTarefa = document.getElementById('adicionar-tarefa');
+const validar = document.getElementById('validar');
 
 
 window.onload =  function(){
@@ -34,7 +35,7 @@ let createCard = (elementoPai, textoTarefa) =>{
     
     let novaTarefa;
     if (textoTarefa == undefined){
-        novaTarefa = `${contador} - ${document.getElementById('nova-tarefa').value}`;
+        novaTarefa = `${contador} - ${document.getElementById('nova-tarefa').value.trim()}`;
     } else{
         novaTarefa=textoTarefa;
     }
@@ -66,7 +67,15 @@ let createCard = (elementoPai, textoTarefa) =>{
 btnAddTarefa.addEventListener('click', function (){
     //impede de atualizar a página
     event.preventDefault();
-    createCard(tarefasPendentes)
+    let tarefa = document.getElementById('nova-tarefa');
+    if (tarefa.value.trim().length >=10){
+        createCard(tarefasPendentes)
+        validar.innerHTML = "";
+        tarefa.style.cssText="border-bottom: 1px solid lightgrey;"
+    } else{
+        tarefa.style.cssText="border-bottom: 1px solid var(--secondary);"
+        validar.innerHTML = `<i class="fas fa-exclamation-circle"></i> Insira no mínimo 10 caracteres`
+    }
 });
 
 // evento para remover elemento de uma div e inserir em outra 
@@ -94,3 +103,13 @@ tarefasConcluidas.addEventListener('click', function (event){
         tarefasPendentes.appendChild(tarefa)
     }
 })
+
+// insere o loading antes da pagina
+document.onreadystatechange = function() {
+    document.querySelector("body").style.visibility = "hidden";
+    document.querySelector(".loading-mask").style.visibility = "visible";
+    setTimeout(function (){
+        document.querySelector(".loading-mask").style.display = "none";
+        document.querySelector("body").style.visibility = "visible";
+    },1000)
+};

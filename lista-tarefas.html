@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/lista-tarefas.css">
+    <script src="https://kit.fontawesome.com/0dd8173ea9.js" crossorigin="anonymous"></script>
     <title>ToDo</title>
 </head>
 
 <body>
+    <div class="loading-mask">
+        <div class="loading"></div>
+    </div>
+
     <header>
         <nav>
             <a href="#">My ToDo's</a>
@@ -33,9 +38,10 @@
     <form class="nova-tarefa">
         <div class="not-done "></div>
         <input type="text" placeholder="Nova tarefa" id="nova-tarefa">
+        <div id="validar"></div>
         <button id="adicionar-tarefa">
-      <img src="./assets/plus.png" alt="Adicionar Tarefa">
-    </button>
+            <img src="./assets/plus.png" alt="Adicionar Tarefa">
+        </button>
     </form>
 
     
