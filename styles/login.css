@@ -90,8 +90,8 @@ form:after {
 input {
   width: 100%;
   padding: .4rem .5rem;
-  background-color: var(--input-grey);
-  border: 1px solid var(--bordaInput-grey);
+  background-color: var(--app-grey);
+  border: 1px solid var(--app-grey);
   border-radius: .2rem;
 }
 
