@@ -16,11 +16,10 @@
 
   <form>
 
-
-
     <h1>Cadastro de conta</h1>
 
-    <div class="image"></div>
+    <div class="image"><img class="imagemPrevia"></div>
+
 
     <label for="username" class="nomeTexto">Nome:</label>
     <input type="text" class="nomeInput" maxlength="15">
@@ -35,10 +34,16 @@
 
 
     <label for="email" class="emailTexto">E-mail:</label>
-    <input type="email" class="emailInput" maxlength="25">
+    <input type="email" class="emailInput" maxlength="20">
+
+
+    <label for="imagem" class="imagemTexto">Imagem:</label>
+    <input type="button" class="imagemBotao" value="Selecione o arquivo.">
+    <input type="file" class="imagemInput" hidden>
 
 
     <button type="click" id="bntCriar">Criar Conta</button>
+
 
     <div class="form-footer">
       <p>ToDo</p>

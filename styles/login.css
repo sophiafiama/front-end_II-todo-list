@@ -23,7 +23,7 @@ input[type="checkbox"] {
   content: "";
   width: 1rem;
   height: 1rem;
-  background-color: white;
+  background-color: var(--bg-color);
   position: absolute;
   border-radius: 1rem;
   top: 0.5rem;
@@ -38,7 +38,7 @@ input[type="checkbox"]:checked + .label-dark:after {
 }
 
 input[type="checkbox"]:checked + .label-dark  {
-  background-color: #243d42;
+  background-color: grey;
 }
 
 .label-dark :active:after {
@@ -49,7 +49,7 @@ input[type="checkbox"]:checked + .label-dark  {
 /* FORM */
 
 h1 {
-  color: rgb(116, 116, 116);
+  color: var(--tittle-color);
   font-weight: 300;
   margin-top: 1rem;
   margin-bottom: 4rem;
@@ -64,7 +64,7 @@ form {
   align-items: center;
   flex-direction: column;
   margin: 0 calc(50% - 15rem);
-  box-shadow: 0 5px 5px lightgrey;
+  box-shadow: 0 5px 5px var(--focus-color);
   padding: 2rem 4rem;
   box-sizing: border-box;
 }
@@ -104,20 +104,21 @@ input#naoValido {
 
 input:focus {
   outline: none;
-  border: 1px solid lightgrey;
+  border: 1px solid var(--focus-color);
 }
 
 label {
   width: 100%;
   font-weight: 300;
   margin-bottom: -.1rem;
-  margin-top: 1.5rem;
+  margin-top: 1.1rem;
+  color: var(--label-color);
 }
 
 button {
   padding: .3rem 2rem;
   background-color: var(--primary);
-  color: white;
+  color: var(--btn-color);
   margin-top: 5rem;
   font-weight: 400;
   font-size: 1rem;
@@ -126,6 +127,6 @@ button {
 
 .form-footer {
   margin-top: auto;
-  color: grey;
+  color: var(--logo-color);
   font-size: 2rem;
 }
