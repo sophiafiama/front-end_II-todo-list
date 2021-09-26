@@ -88,18 +88,18 @@ emailInput.addEventListener('keyup', () => {
     }
 })
 
-const imagemPrevia = document.querySelector('.imagemPrevia');
-const imagemInput = document.querySelector('.imagemInput');
-const imagemBotao = document.querySelector('.imagemBotao');
+// const imagemPrevia = document.querySelector('.imagemPrevia');
+// const imagemInput = document.querySelector('.imagemInput');
+// const imagemBotao = document.querySelector('.imagemBotao');
 
-imagemBotao.onclick = () => imagemInput.click();
+// imagemBotao.onclick = () => imagemInput.click();
 
-imagemInput.onchange = e => {
-    const fileToUpload = e.target.files.item(0);
-    const reader = new FileReader();
-    reader.onload = e => imagemPrevia.src = e.target.result;
-    reader.readAsDataURL(fileToUpload);
-};
+// imagemInput.onchange = e => {
+//     const fileToUpload = e.target.files.item(0);
+//     const reader = new FileReader();
+//     reader.onload = e => imagemPrevia.src = e.target.result;
+//     reader.readAsDataURL(fileToUpload);
+// };
 
 
 
