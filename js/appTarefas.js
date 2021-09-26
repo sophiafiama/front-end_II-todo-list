@@ -1,5 +1,7 @@
 const usuario = localStorage.getItem('usuario');
 const nomeUsuario = document.getElementById('nome-usuario');
+const img = localStorage.getItem('img');
+const usuarioImg = document.querySelector('.user-image');
 const tarefasPendentes = document.querySelector('.tarefas-pendentes');
 const tarefasConcluidas = document.querySelector('.tarefas-concluidas');
 const btnAddTarefa = document.getElementById('adicionar-tarefa');
@@ -9,6 +11,10 @@ const validar = document.getElementById('validar');
 window.onload =  function(){
     //inclui o nome do usuário logado para nova pagina
     nomeUsuario.innerHTML = usuario;
+
+    usuarioImg.style.cssText = `background: url(${img});
+                                background-size: cover;`
+
 
     //pega dados da api de tarefas
     fetch('https://jsonplaceholder.typicode.com/todos')

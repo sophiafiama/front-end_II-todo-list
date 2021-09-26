@@ -108,7 +108,16 @@ bntCriar.addEventListener('click', (event) => {
     }
 });
 
-
+window.onload = function (){
+    fetch('https://dog.ceo/api/breeds/image/random')
+    .then((response)=> response.json())
+    .then((json) => {
+        let image = document.querySelector('.image')
+        image.style.cssText = `background: url(${json.message});
+                                background-size: cover;`
+        localStorage.setItem('img', json.message)
+    })
+}
 
 
 //Pegar todos os usuários na base de dados

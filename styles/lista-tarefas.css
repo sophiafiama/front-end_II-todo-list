@@ -80,7 +80,7 @@ a {
     width: 2rem;
     border-radius: 50%;
     background-color: white;
-    opacity: .3;
+    border: 1.5px solid rgba(255, 255, 255);
     margin-left: .7rem;
 }
 .user-image{
