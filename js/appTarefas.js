@@ -7,14 +7,13 @@ const tarefasConcluidas = document.querySelector('.tarefas-concluidas');
 const btnAddTarefa = document.getElementById('adicionar-tarefa');
 const validar = document.getElementById('validar');
 
-
 window.onload =  function(){
     //inclui o nome do usuário logado para nova pagina
     nomeUsuario.innerHTML = usuario;
 
     usuarioImg.style.cssText = `background: url(${img});
                                 background-size: cover;`
-
+    
 
     //pega dados da api de tarefas
     fetch('https://jsonplaceholder.typicode.com/todos')
@@ -66,6 +65,7 @@ let createCard = (elementoPai, textoTarefa) =>{
                                             <p class="nome">${novaTarefa}</p>
                                             <p class="timestamp">Criada: ${dataDia()}</p>
                                          </div>
+                                         <div class="excluir"><i class="fas fa-trash"></i></div>
                                     </li>`;
 }
 
@@ -86,27 +86,34 @@ btnAddTarefa.addEventListener('click', function (){
 
 // evento para remover elemento de uma div e inserir em outra 
 tarefasPendentes.addEventListener('click', function (event){
+    //seleciona e armazena o elemento pai (div tarefa) para que possamos realoca-la
+    let tarefa = event.target.parentNode;
     //se alvo do evento for elemento de classe 'not-done'
     if (event.target.classList.contains('not-done')) {
-        //seleciona e armazena o elemento pai (div tarefa) para que possamos realoca-la
-        let tarefa = event.target.parentNode;
         //remove a div tarefa 
         tarefa.parentNode.removeChild(tarefa);
         //realoca de acordo com o novo pai selecionado
         tarefasConcluidas.appendChild(tarefa)
     }
+    if(event.target.classList.contains('excluir')){
+        tarefa.parentNode.removeChild(tarefa);
+    }
 })
+
 
 // evento para remover elemento de uma div e inserir em outra
 tarefasConcluidas.addEventListener('click', function (event){
+    //seleciona e armazena o elemento pai (div tarefa) para que possamos realoca-la
+    let tarefa = event.target.parentNode;
     //se alvo do evento for elemento de classe 'not-done'
     if (event.target.classList.contains('not-done')) {
-        //seleciona e armazena o elemento pai (div tarefa) para que possamos realoca-la
-        let tarefa = event.target.parentNode;
         //remove a div tarefa 
         tarefa.parentNode.removeChild(tarefa);
         //realoca de acordo com o novo pai selecionado
         tarefasPendentes.appendChild(tarefa)
+    }
+    if(event.target.classList.contains('excluir')){
+        tarefa.parentNode.removeChild(tarefa);
     }
 })
 

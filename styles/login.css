@@ -2,6 +2,12 @@
 
 /* BOTÃO DARK MODE */
 
+.btn-dark{
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  
+}
+
 input[type="checkbox"] {
   width: 0;
   height: 0;
@@ -85,11 +91,12 @@ form:after {
   border-radius: 50%;
   background-color: var(--app-grey);
 }
-/* .imagemPrevia {
+
+.imagemPrevia {
   height: 9rem;
   width: 9rem;
   border-radius: 50%;
-} */
+}
 
 input {
   width: 100%;

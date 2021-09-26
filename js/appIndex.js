@@ -34,8 +34,7 @@ nomeInput.addEventListener('keyup', () => {
         validaNome = false;
     } else {
         nomeTexto.innerHTML = "Nome:"
-        nomeInput.setAttribute('style', "border: 1px solid var(--bordaInput-grey)");
-
+        
         fetch('https://jsonplaceholder.typicode.com/users')
         .then((response) => response.json())
         .then((json) => json.map(json => {
@@ -59,7 +58,7 @@ senhaInput.addEventListener('keyup', () => {
         validaSenha = false;
     } else {
         senhaTexto.innerHTML = "Senha:"
-        senhaInput.setAttribute('style', "border: 1px solid var(--bordaInput-grey)");
+        senhaInput.setAttribute('style', "border: 2px solid blue");
         validaSenha = true;
     }
 })
@@ -71,7 +70,7 @@ senhaInput2.addEventListener('keyup', () => {
         validaSenha2 = false;
     } else {
         senhaTexto2.innerHTML = "Senha:"
-        senhaInput2.setAttribute('style', "border: 1px solid var(--bordaInput-grey)");
+        senhaInput2.setAttribute('style', "border: 2px solid blue");
         validaSenha2 = true;
     }
 })
@@ -83,23 +82,26 @@ emailInput.addEventListener('keyup', () => {
         validaEmail = false;
     } else {
         emailTexto.innerHTML = "E-mail:"
-        emailInput.setAttribute('style', "border: 1px solid var(--bordaInput-grey)");
+        emailInput.setAttribute('style', "border: 2px solid blue");
         validaEmail = true;
     }
 })
 
-// const imagemPrevia = document.querySelector('.imagemPrevia');
-// const imagemInput = document.querySelector('.imagemInput');
-// const imagemBotao = document.querySelector('.imagemBotao');
+const imagemPrevia = document.querySelector('.imagemPrevia');
+const imagemInput = document.querySelector('.imagemInput');
+const imagemBotao = document.querySelector('.imagemBotao');
 
-// imagemBotao.onclick = () => imagemInput.click();
+imagemBotao.onclick = () => imagemInput.click();
 
-// imagemInput.onchange = e => {
-//     const fileToUpload = e.target.files.item(0);
-//     const reader = new FileReader();
-//     reader.onload = e => imagemPrevia.src = e.target.result;
-//     reader.readAsDataURL(fileToUpload);
-// };
+imagemInput.onchange = e => {
+    const fileToUpload = e.target.files.item(0);
+    const reader = new FileReader();
+    reader.onload = e => {
+        imagemPrevia.src = e.target.result;
+        localStorage.setItem('img', e.target.result)}
+    reader.readAsDataURL(fileToUpload);
+    
+};
 
 
 
@@ -140,38 +142,8 @@ window.onload = function (){
     fetch('https://dog.ceo/api/breeds/image/random')
     .then((response)=> response.json())
     .then((json) => {
-        let image = document.querySelector('.image')
-        image.style.cssText = `background: url(${json.message});
-                                background-size: cover;`
-        localStorage.setItem('img', json.message)
+        let image = document.querySelector('.imagemPrevia')
+        image.setAttribute('src', json.message)
+        localStorage.setItem('img', image)
     })
 }
-
-
-//Pegar todos os usuários na base de dados
-
-
-// let button = document.querySelector('button')
-// button.addEventListener('click', function (event) {
-//     event.preventDefault()
-//     let usuario = document.getElementById('username').value.trim()
-//     let senha = document.getElementById('password').value
-//     let senha2 = document.getElementById('password-2').value
-
-//     let validaCampos = () => {
-//         if (!usuario) {
-//             alert('Usuario precisa ser preenchido')
-//         } else if (!senha) {
-//             alert('Senha precisa ser preenchida')
-//         } else if (senha != senha2) {
-//             alert('As senhas precisam ser iguais')
-//         }
-//     }
-
-//     validaCampos()
-
-    
-// })
-
-
-
