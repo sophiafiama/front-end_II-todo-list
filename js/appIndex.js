@@ -97,8 +97,11 @@ imagemBotao.onclick = () => imagemInput.click();
 imagemInput.onchange = e => {
     const fileToUpload = e.target.files.item(0);
     const reader = new FileReader();
-    reader.onload = e => imagemPrevia.src = e.target.result;
+    reader.onload = e => {
+        imagemPrevia.src = e.target.result;
+        localStorage.setItem('img', e.target.result)}
     reader.readAsDataURL(fileToUpload);
+    
 };
 
 
@@ -140,10 +143,9 @@ window.onload = function (){
     fetch('https://dog.ceo/api/breeds/image/random')
     .then((response)=> response.json())
     .then((json) => {
-        let image = document.querySelector('.image')
-        image.style.cssText = `background: url(${json.message});
-                                background-size: cover;`
-        localStorage.setItem('img', json.message)
+        let image = document.querySelector('.imagemPrevia')
+        image.setAttribute('src', json.message)
+        localStorage.setItem('img', image)
     })
 }
 
