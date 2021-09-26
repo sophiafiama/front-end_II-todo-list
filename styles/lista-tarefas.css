@@ -276,6 +276,23 @@ a {
     text-decoration: line-through;
 }
 
+.excluir {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--secondary) ;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.tarefa:hover .excluir{
+    display: flex;
+}
+
 /* Barra de progesso ----------------------------------------------------------- */
 
 .loading-mask{
