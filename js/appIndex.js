@@ -1,4 +1,8 @@
 //Salvando informações
+let imageInput = document.querySelector('.imageInput');
+let validaImage = false;
+
+let idUsuario = 0;
 
 let nomeTexto = document.querySelector('.nomeTexto');
 let nomeInput = document.querySelector('.nomeInput');
@@ -24,29 +28,37 @@ let listaLocal = JSON.parse(localStorage.getItem('listaLS') || '[]');
 //Estrutura de Cadastro
 
 nomeInput.addEventListener('keyup', () => {
-    if (nomeInput.value.length <= 2) {
+    if (nomeInput.value.trim().length < 3) {
         nomeTexto.innerHTML = "Nome: *Deve ter no mínimo 3 letras."
-        nomeTexto.setAttribute('style', "color: red");
-        nomeInput.setAttribute('style', "border: 1px solid red");
+        nomeInput.setAttribute('style', "border: 2px solid red");
         validaNome = false;
     } else {
         nomeTexto.innerHTML = "Nome:"
-        nomeTexto.setAttribute('style', "color: green");
         nomeInput.setAttribute('style', "border: 1px solid var(--bordaInput-grey)");
-        validaNome = true;
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then((response) => response.json())
+        .then((json) => json.map(json => {
+            if (json.username == nomeInput.value) {
+                nomeInput.setAttribute('style', "border: 2px solid blue");
+                idUsuario = json.id
+                validaNome = true;
+            } else {
+                
+            }
+        }))
+        
     }
 })
 
 
 senhaInput.addEventListener('keyup', () => {
-    if (senhaInput.value.length <= 3) {
+    if (senhaInput.value.length < 4) {
         senhaTexto.innerHTML = "Senha: *Deve ter no mínimo 4 digitos."
-        senhaTexto.setAttribute('style', "color: red");
-        senhaInput.setAttribute('style', "border: 1px solid red");
+        senhaInput.setAttribute('style', "border: 2px solid red");
         validaSenha = false;
     } else {
         senhaTexto.innerHTML = "Senha:"
-        senhaTexto.setAttribute('style', "color: green");
         senhaInput.setAttribute('style', "border: 1px solid var(--bordaInput-grey)");
         validaSenha = true;
     }
@@ -55,12 +67,10 @@ senhaInput.addEventListener('keyup', () => {
 senhaInput2.addEventListener('keyup', () => {
     if (senhaInput2.value != senhaInput.value) {
         senhaTexto2.innerHTML = "Senha: *Deve ter no mínimo 4 digitos."
-        senhaTexto2.setAttribute('style', "color: red");
-        senhaInput2.setAttribute('style', "border: 1px solid red");
+        senhaInput2.setAttribute('style', "border: 2px solid red");
         validaSenha2 = false;
     } else {
         senhaTexto2.innerHTML = "Senha:"
-        senhaTexto2.setAttribute('style', "color: green");
         senhaInput2.setAttribute('style', "border: 1px solid var(--bordaInput-grey)");
         validaSenha2 = true;
     }
@@ -69,24 +79,42 @@ senhaInput2.addEventListener('keyup', () => {
 emailInput.addEventListener('keyup', () => {
     if (!emailInput.checkValidity()) {
         emailTexto.innerHTML = "E-mail: *Não é valido."
-        emailTexto.setAttribute('style', "color: red");
-        emailInput.setAttribute('style', "border: 1px solid red");
+        emailInput.setAttribute('style', "border: 2px solid red");
         validaEmail = false;
     } else {
         emailTexto.innerHTML = "E-mail:"
-        emailTexto.setAttribute('style', "color: green");
         emailInput.setAttribute('style', "border: 1px solid var(--bordaInput-grey)");
         validaEmail = true;
     }
 })
 
+const imagemPrevia = document.querySelector('.imagemPrevia');
+const imagemInput = document.querySelector('.imagemInput');
+const imagemBotao = document.querySelector('.imagemBotao');
+
+imagemBotao.onclick = () => imagemInput.click();
+
+imagemInput.onchange = e => {
+    const fileToUpload = e.target.files.item(0);
+    const reader = new FileReader();
+    reader.onload = e => imagemPrevia.src = e.target.result;
+    reader.readAsDataURL(fileToUpload);
+};
+
+
+
 
 bntCriar.addEventListener('click', (event) => {
     event.preventDefault();
     if (validaNome && validaSenha && validaSenha2 && validaEmail) {
+       
+        
+       
         //Insere os dados ao array listaDeCadastros
         listaLocal.push(
             {
+                id: idUsuario,
+                image: imagemInput.value,
                 nome: nomeInput.value,
                 senha: senhaInput.value,
                 email: emailInput.value
@@ -133,17 +161,7 @@ bntCriar.addEventListener('click', (event) => {
 
 //     validaCampos()
 
-//     fetch('https://jsonplaceholder.typicode.com/users')
-//         .then((response) => response.json())
-//         .then((json) => json.map(json => {
-//             if (json.username == usuario) {
-//                 alert("Usuário encontrado.")
-//                 localStorage.setItem('usuario', usuario)
-//                 document.location.href = '/lista-tarefas.html'
-//             } else {
-//                 console.log("Usuário não encontrado.")
-//             }
-//         }))
+    
 // })
 
 

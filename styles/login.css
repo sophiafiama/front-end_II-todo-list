@@ -83,8 +83,12 @@ form:after {
   height: 9rem;
   width: 9rem;
   border-radius: 50%;
-  background-color: var(--app-grey);
-  
+  background-color: var(--app-grey); 
+}
+.imagemPrevia {
+  height: 9rem;
+  width: 9rem;
+  border-radius: 50%; 
 }
 
 input {
@@ -112,7 +116,7 @@ label {
   width: 100%;
   font-weight: 300;
   margin-bottom: -.1rem;
-  margin-top: 1.5rem;
+  margin-top: 1.1rem;
 }
 
 button {
