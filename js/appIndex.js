@@ -66,7 +66,7 @@ senhaInput.addEventListener('keyup', () => {
 
 senhaInput2.addEventListener('keyup', () => {
     if (senhaInput2.value != senhaInput.value) {
-        senhaTexto2.innerHTML = "Senha: *Deve ter no mínimo 4 digitos."
+        senhaTexto2.innerHTML = "Senha: *Digite novamente a senha."
         senhaInput2.setAttribute('style', "border: 2px solid red");
         validaSenha2 = false;
     } else {
