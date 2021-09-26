@@ -55,6 +55,7 @@ input[type="checkbox"] {
   }
   
 
+
 a {
     display: block;
     width: fit-content;
@@ -94,7 +95,7 @@ a {
     position: relative;
     display: flex;
     align-items: center;
-    background-color: (--bg-color);
+    background-color: white;
     width: 80%;
     margin: 0 10%;
     padding: 1.5rem;
@@ -138,6 +139,7 @@ a {
 .nova-tarefa button img {
     height: 100%;
     width: 100%;
+    cursor: pointer;
 }
 
 .not-done {
