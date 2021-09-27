@@ -65,11 +65,11 @@ senhaInput.addEventListener('keyup', () => {
 
 senhaInput2.addEventListener('keyup', () => {
     if (senhaInput2.value != senhaInput.value) {
-        senhaTexto2.innerHTML = "Senha: *Digite novamente a senha."
+        senhaTexto2.innerHTML = "Senha: *Confirme a senha."
         senhaInput2.setAttribute('style', "border: 2px solid red");
         validaSenha2 = false;
     } else {
-        senhaTexto2.innerHTML = "Senha:"
+        senhaTexto2.innerHTML = "Repetir senha:"
         senhaInput2.setAttribute('style', "border: 2px solid blue");
         validaSenha2 = true;
     }
