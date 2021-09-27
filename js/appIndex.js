@@ -116,7 +116,6 @@ bntCriar.addEventListener('click', (event) => {
         listaLocal.push(
             {
                 id: idUsuario,
-                image: image,
                 nome: nomeInput.value,
                 senha: senhaInput.value,
                 email: emailInput.value
