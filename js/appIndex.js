@@ -148,32 +148,3 @@ window.onload = function (){
         localStorage.setItem('img', image)
     })
 }
-
-
-//Pegar todos os usuários na base de dados
-
-
-// let button = document.querySelector('button')
-// button.addEventListener('click', function (event) {
-//     event.preventDefault()
-//     let usuario = document.getElementById('username').value.trim()
-//     let senha = document.getElementById('password').value
-//     let senha2 = document.getElementById('password-2').value
-
-//     let validaCampos = () => {
-//         if (!usuario) {
-//             alert('Usuario precisa ser preenchido')
-//         } else if (!senha) {
-//             alert('Senha precisa ser preenchida')
-//         } else if (senha != senha2) {
-//             alert('As senhas precisam ser iguais')
-//         }
-//     }
-
-//     validaCampos()
-
-    
-// })
-
-
-
