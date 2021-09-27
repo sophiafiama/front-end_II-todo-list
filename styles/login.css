@@ -5,7 +5,8 @@
 .btn-dark{
   margin-left: 2rem;
   margin-bottom: 2rem;
-  
+ position: absolute; 
+  z-index: 2;
 }
 
 input[type="checkbox"] {
@@ -57,7 +58,7 @@ input[type="checkbox"]:checked + .label-dark  {
 h1 {
   color: var(--tittle-color);
   font-weight: 300;
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   margin-bottom: 4rem;
 }
 
