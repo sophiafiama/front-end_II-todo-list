@@ -2,11 +2,12 @@
 
 
 header {
+
     display: flex;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
     box-shadow: 0px 3px 5px lightgrey;
     padding: 0 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem;    
 }
 
 /* BOTÃO DARK MODE */
@@ -67,6 +68,7 @@ a {
 
 .user-info {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-left: auto;
     color: rgb(223, 223, 223);
@@ -87,7 +89,6 @@ a {
 .user-image{
     margin-right: 1rem;
 }
-
 
 /* Novas tarefa ----------------------------------------------------------- */
 
@@ -232,7 +233,7 @@ a {
 }
 
 .tarefa .nome {
-    color: rgb(95, 95, 95);
+    color: var(--logo-color);
     
 }
 
@@ -240,6 +241,10 @@ a {
     font-size: .9rem;
     color: rgb(134, 134, 134);
     
+}
+/* cor da data */
+p{
+    color: var(--logo-color)
 }
 
 
@@ -335,6 +340,7 @@ a {
     background:currentColor;
     animation:l1 1.5s infinite;
 }
+
 @keyframes l1 {
       100% {inset:0}
 }

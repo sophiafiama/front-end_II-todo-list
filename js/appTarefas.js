@@ -7,14 +7,13 @@ const tarefasConcluidas = document.querySelector('.tarefas-concluidas');
 const btnAddTarefa = document.getElementById('adicionar-tarefa');
 const validar = document.getElementById('validar');
 
-
 window.onload =  function(){
     //inclui o nome do usuário logado para nova pagina
     nomeUsuario.innerHTML = usuario;
 
     usuarioImg.style.cssText = `background: url(${img});
                                 background-size: cover;`
-
+    
 
     //pega dados da api de tarefas
     fetch('https://jsonplaceholder.typicode.com/todos')
