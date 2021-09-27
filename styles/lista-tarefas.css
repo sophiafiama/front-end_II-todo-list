@@ -231,7 +231,7 @@ a {
 }
 
 .tarefa .nome {
-    color: rgb(95, 95, 95);
+    color: var(--logo-color);
     
 }
 
@@ -239,6 +239,10 @@ a {
     font-size: .9rem;
     color: rgb(134, 134, 134);
     
+}
+/* cor da data */
+p{
+    color: var(--logo-color)
 }
 
 
@@ -334,6 +338,7 @@ a {
     background:currentColor;
     animation:l1 1.5s infinite;
 }
+
 @keyframes l1 {
       100% {inset:0}
 }
