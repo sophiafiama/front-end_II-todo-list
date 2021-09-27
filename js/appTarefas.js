@@ -1,4 +1,4 @@
-const usuario = localStorage.getItem('usuario');
+const usuario = JSON.parse(localStorage.getItem('usuario'));
 const nomeUsuario = document.getElementById('nome-usuario');
 const img = localStorage.getItem('img');
 const usuarioImg = document.querySelector('.user-image');
