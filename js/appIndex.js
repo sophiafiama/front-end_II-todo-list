@@ -34,19 +34,19 @@ nomeInput.addEventListener('keyup', () => {
         validaNome = false;
     } else {
         nomeTexto.innerHTML = "Nome:"
-        
+
         fetch('https://jsonplaceholder.typicode.com/users')
-        .then((response) => response.json())
-        .then((json) => json.map(json => {
-            if (json.username == nomeInput.value) {
-                nomeInput.setAttribute('style', "border: 2px solid blue");
-                idUsuario = json.id
-                validaNome = true;
-            } else {
-                
-            }
-        }))
-        
+            .then((response) => response.json())
+            .then((json) => json.map(json => {
+                if (json.username == nomeInput.value) {
+                    nomeInput.setAttribute('style', "border: 2px solid blue");
+                    idUsuario = json.id
+                    validaNome = true;
+                } else {
+
+                }
+            }))
+
     }
 })
 
@@ -98,25 +98,25 @@ imagemInput.onchange = e => {
     const reader = new FileReader();
     reader.onload = e => {
         imagemPrevia.src = e.target.result;
-        localStorage.setItem('img', e.target.result)}
+        localStorage.setItem('img', e.target.result)
+    }
     reader.readAsDataURL(fileToUpload);
-    
-};
 
+};
 
 
 
 bntCriar.addEventListener('click', (event) => {
     event.preventDefault();
     if (validaNome && validaSenha && validaSenha2 && validaEmail) {
-       
-        
-       
+
+
+
         //Insere os dados ao array listaDeCadastros
         listaLocal.push(
             {
                 id: idUsuario,
-                image: imagemInput.value,
+                image: image,
                 nome: nomeInput.value,
                 senha: senhaInput.value,
                 email: emailInput.value
@@ -126,7 +126,7 @@ bntCriar.addEventListener('click', (event) => {
         localStorage.setItem('listaLS', JSON.stringify(listaLocal));
 
         window.location = "lista-tarefas.html";
-        
+
     } else {
         if (!validaNome) {
             nomeInput.focus()
@@ -138,12 +138,12 @@ bntCriar.addEventListener('click', (event) => {
     }
 });
 
-window.onload = function (){
+window.onload = function () {
     fetch('https://dog.ceo/api/breeds/image/random')
-    .then((response)=> response.json())
-    .then((json) => {
-        let image = document.querySelector('.imagemPrevia')
-        image.setAttribute('src', json.message)
-        localStorage.setItem('img', image)
-    })
+        .then((response) => response.json())
+        .then((json) => {
+            let image = document.querySelector('.imagemPrevia')
+            image.setAttribute('src', json.message)
+            localStorage.setItem('img', image)
+        })
 }
