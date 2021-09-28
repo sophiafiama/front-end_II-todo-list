@@ -19,11 +19,12 @@
 }
 
 
+
 .dark-mode:root {
   --primary: #7898FF;
   --secondary: #8E64C5;
   --app-grey: lightgrey;
-  --bg-form:rgba(0, 0, 0, 0.562);
+  --bg-form:rgba(59, 58, 58, 0.418);
   --bg-tarefas:rgba(59, 58, 58, 0.418);
   --bg-color:black;
   --btn-color:white;

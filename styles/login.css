@@ -18,7 +18,7 @@ input[type="checkbox"] {
   width: 5rem;
   height: 2rem;
   display:block;
-  background-color: black;
+  background-color: var(--secondary);
   border-radius: 1rem;
   position: relative;
   cursor: pointer;
@@ -45,7 +45,7 @@ input[type="checkbox"]:checked + .label-dark:after {
 }
 
 input[type="checkbox"]:checked + .label-dark  {
-  background-color: grey;
+  background-color: var(--primary);
 }
 
 .label-dark :active:after {
