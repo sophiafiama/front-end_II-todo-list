@@ -275,7 +275,7 @@ p{
 .tarefas-concluidas {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 80%;
     list-style: none;
     margin: 2rem auto;
 }
@@ -310,7 +310,7 @@ p{
     align-items: center;
     margin: 5px;
     display: flex;
-    opacity: 0;
+    opacity: 5;
     transition: opacity 300ms linear;
 }
 

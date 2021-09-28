@@ -103,7 +103,7 @@ let createCard = (elementoPai, textoTarefa) =>{
                                             <div><p class="timestamp">Criada: ${dataDia()}</p>
                                             <p class="timestamp">Prazo: ${definirPrazo()}</p></div>
                                          </div>
-                                         <div class="excluir"><i class="fas fa-trash"></i></div>
+                                         <div class="excluir"><i class="fas fa-trash icon"></i></div>
                                     </li>`;
 }
 
@@ -135,7 +135,17 @@ tarefasPendentes.addEventListener('click', function (event){
         tarefasConcluidas.appendChild(tarefa)
     }
     if(event.target.classList.contains('excluir')){
+        let confirma = confirm('Deseja excluir a tarefa?')
+        if(confirma){
+            tarefa.parentNode.removeChild(tarefa);
+        }
+    }
+    if(event.target.classList.contains('icon')){
+        let confirma = confirm('Deseja excluir a tarefa?')
+        if(confirma){
+        tarefa = tarefa.parentNode;
         tarefa.parentNode.removeChild(tarefa);
+        }
     }
 })
 
@@ -152,7 +162,17 @@ tarefasConcluidas.addEventListener('click', function (event){
         tarefasPendentes.appendChild(tarefa)
     }
     if(event.target.classList.contains('excluir')){
+        let confirma = confirm('Deseja excluir a tarefa?')
+        if(confirma){
+            tarefa.parentNode.removeChild(tarefa);
+        }
+    }
+    if(event.target.classList.contains('icon')){
+        let confirma = confirm('Deseja excluir a tarefa?')
+        if(confirma){
+        tarefa = tarefa.parentNode;
         tarefa.parentNode.removeChild(tarefa);
+        }
     }
 })
 
