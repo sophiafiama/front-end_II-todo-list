@@ -22,8 +22,6 @@ let validaEmail = false;
 
 const bntCriar = document.getElementById("bntCriar");
 
-//se liver valores no localStorage com a ket 'listaDeCadastro' ele pega os valores, mas caso não tenha ele cria um array vazio.
-let listaLocal = JSON.parse(localStorage.getItem('listaLS') || '[]');
 
 //Estrutura de Cadastro
 
@@ -112,17 +110,7 @@ bntCriar.addEventListener('click', (event) => {
 
 
 
-        //Insere os dados ao array listaDeCadastros
-        listaLocal.push(
-            {
-                id: idUsuario,
-                nome: nomeInput.value,
-                senha: senhaInput.value,
-                email: emailInput.value
-            }
-        );
-        //Insere os dados de listaDeCadastros no localStorage
-        localStorage.setItem('listaLS', JSON.stringify(listaLocal));
+        
         localStorage.setItem('usuario', JSON.stringify(nomeInput.value));
         window.location = "lista-tarefas.html";
 
