@@ -123,7 +123,7 @@ bntCriar.addEventListener('click', (event) => {
         );
         //Insere os dados de listaDeCadastros no localStorage
         localStorage.setItem('listaLS', JSON.stringify(listaLocal));
-
+        localStorage.setItem('usuario', JSON.stringify(nomeInput.value));
         window.location = "lista-tarefas.html";
 
     } else {
