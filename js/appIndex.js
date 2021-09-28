@@ -6,6 +6,7 @@ let idUsuario = 0;
 
 let nomeTexto = document.querySelector('.nomeTexto');
 let nomeInput = document.querySelector('.nomeInput');
+let nomeVerificador
 let validaNome = false;
 
 let senhaTexto = document.querySelector('.senhaTexto');
@@ -32,7 +33,7 @@ nomeInput.addEventListener('keyup', () => {
         validaNome = false;
     } else {
         nomeTexto.innerHTML = "Nome:"
-
+        
         fetch('https://jsonplaceholder.typicode.com/users')
             .then((response) => response.json())
             .then((json) => json.map(json => {
@@ -40,10 +41,13 @@ nomeInput.addEventListener('keyup', () => {
                     nomeInput.setAttribute('style', "border: 2px solid blue");
                     idUsuario = json.id
                     validaNome = true;
-                } else {
-
+                    nomeVerificador = json.username
                 }
             }))
+        
+    }
+    if (nomeInput.value != nomeVerificador) {
+        nomeInput.setAttribute('style', "border: 2px solid red");
     }
 })
 
