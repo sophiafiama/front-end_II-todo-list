@@ -65,10 +65,10 @@ a {
 }
 
 input[type="date"]{
-    background-color: rgb(255, 255, 255);
+    background-color: var(--bg-tarefas);
+    color: var(--label-color);
     padding: 5px;
     font-family: 'Lato', sans-serif;
-    color: #000;
     border: none;
     outline: none;
     border-radius: 5px;
@@ -139,11 +139,6 @@ input[type="date"]{
     font-size: 1.1rem;
     background-color: var(--bg-tarefas);
     color: var(--label-color);
-}
-.nova-tarefa input{
-    background-color: var(--bg-tarefas);
-    color: var(--label-color);
-    
 }
 
 .nova-tarefa input:focus {
