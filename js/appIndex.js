@@ -105,6 +105,7 @@ bntCriar.addEventListener('click', (event) => {
     event.preventDefault();
     if (validaNome && validaSenha && validaSenha2 && validaEmail) {
 
+        localStorage.setItem('userId', JSON.stringify(idUsuario));
         localStorage.setItem('usuario', JSON.stringify(nomeInput.value));
         window.location = "lista-tarefas.html";
 
