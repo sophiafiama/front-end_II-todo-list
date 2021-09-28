@@ -96,8 +96,6 @@ let createCard = (elementoPai, textoTarefa) =>{
     }
 
       
-    
-
     elementoPai.innerHTML += `<li class="tarefa">
                                         <div class="not-done"></div>
                                         <div class="descripcion">
