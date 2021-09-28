@@ -6,12 +6,15 @@
   --app-grey: #F2F2F2;
   --bg-form:white;
   --bg-color:white;
+  --bg-tarefas:white;
   --btn-color:white;
   --logo-color:white;
   --focus-color: lightgrey;
   --tittle-color:rgb(116, 116, 116);
   --label-color:black;
   --tarefa-color:grey;
+  --shadow-color:lightgrey;
+  --excluir-color:white;
 
 }
 
@@ -21,6 +24,7 @@
   --secondary: #8E64C5;
   --app-grey: lightgrey;
   --bg-form:rgba(0, 0, 0, 0.562);
+  --bg-tarefas:rgba(59, 58, 58, 0.418);
   --bg-color:black;
   --btn-color:white;
   --logo-color:black;
@@ -28,6 +32,7 @@
   --tittle-color:lightgrey;
   --label-color:white;
   --tarefa-color:grey;
+  --shadow-color:rgba(128, 128, 128, 0.178);
 }
 
 
