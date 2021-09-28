@@ -5,7 +5,7 @@ header {
 
     display: flex;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
-    box-shadow: 0px 3px 5px lightgrey;
+    box-shadow: var(--shadow-color);
     padding: 0 1rem;
     margin-bottom: 3rem;    
 }
@@ -103,7 +103,6 @@ input[type="date"]{
     object-fit: cover;
     z-index: 2;
     border-radius: 50%;
-    
     border: 1.5px solid var(--logo-color);
     margin-left: .7rem;
 }
@@ -120,22 +119,31 @@ input[type="date"]{
     position: relative;
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: var(--bg-tarefas);
     width: 80%;
     margin: 0 auto;
     padding: 1.5rem;
-    box-shadow: 2px 2px 10px lightgrey;
+    box-shadow: 2px 2px 10px var(--shadow-color);
     border-radius: .2rem;
     z-index: 20;
 }
 
+
+
 .nova-tarefa input[type=text] {
     border: none;
     flex: 1;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid var(--shadow-color);
     border-radius: 0;
     padding: .4rem;
     font-size: 1.1rem;
+    background-color: var(--bg-tarefas);
+    color: var(--label-color);
+}
+.nova-tarefa input{
+    background-color: var(--bg-tarefas);
+    color: var(--label-color);
+    
 }
 
 .nova-tarefa input:focus {
@@ -166,6 +174,7 @@ input[type="date"]{
     
 }
 
+/* circunferencia não concluidas */
 .not-done {
     width: 2rem;
     height: 2rem;
@@ -191,14 +200,14 @@ input[type="date"]{
     width: 80%;
     list-style: none;
     margin: 2em auto;
-    background-color: var(--bg-color)
+    background-color: var(--bg-color);
 }
 
 .tarefa {
     display: flex;
     align-items: center;
     margin-bottom: 1.5rem;
-    background-color: var(--bg-color)
+    background-color: (--bg)
 }
 
 .tarefa .not-done {
@@ -206,7 +215,7 @@ input[type="date"]{
     height: 1.5rem;
     width: 1.5rem;
     background-color: (--bg-color);
-    box-shadow: 2px 2px 5px lightgrey;
+    box-shadow: 2px 2px 5px var(--shadow-color);
     border: 2px solid var(--secondary);
     z-index: 2;
     transition: background-color 200ms linear;
@@ -243,9 +252,9 @@ input[type="date"]{
     align-items: center;
     justify-content: space-between;
     flex: 1;
-    background-color: var(--bg-color);
+    background-color: var(--bg-tarefas);
     padding: 1rem 2rem;
-    box-shadow: 2px 2px 5px lightgrey;
+    box-shadow: 2px 2px 5px var(--shadow-color);
     
 }
 
@@ -279,7 +288,7 @@ p{
     padding: .5rem 1rem;
     background-color:var(--bg-color);
     border-radius: .2rem;
-    box-shadow: 3px 3px 5px lightgrey;
+    box-shadow: 3px 3px 5px var(--shadow-color);
     color: rgb(170, 170, 170);
     font-weight: 400;
     font-size: 1.1rem;
@@ -296,8 +305,9 @@ p{
     margin: 2rem auto;
 }
 
+/* circulo concluidas */
 .tarefas-concluidas .not-done {
-    background-color: lightgrey;
+    background-color: var(--app-grey);
     border-color: grey;
 }
 
@@ -307,11 +317,11 @@ p{
 }
 
 .tarefas-concluidas .tarefa .descripcion {
-    background-color: var(--bg-color);
+    background-color: (--bg-tarefas);
 }
 
 .tarefas-concluidas .tarefa .descripcion .nome {
-    color: grey;
+    color: var(--tarefa-color);
     text-decoration: line-through;
 }
 
@@ -319,7 +329,7 @@ p{
     width: 2rem;
     height: 2rem;
     background-color: var(--secondary) ;
-    color: white;
+    color: var(--excluir-color);
     border-radius: 50%;
     cursor: pointer;
     justify-content: center;
