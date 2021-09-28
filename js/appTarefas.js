@@ -6,10 +6,28 @@ const tarefasPendentes = document.querySelector('.tarefas-pendentes');
 const tarefasConcluidas = document.querySelector('.tarefas-concluidas');
 const btnAddTarefa = document.getElementById('adicionar-tarefa');
 const validar = document.getElementById('validar');
+const calendar = document.getElementById('prazo');
 
 window.onload =  function(){
     //inclui o nome do usuário logado para nova pagina
     nomeUsuario.innerHTML = usuario;
+  
+
+    let today = new Date()
+
+    let year = today.getFullYear();
+    let month = today.getMonth()+1;
+    let day = today.getDate();
+               
+
+    //Adiciona 0 na frente de numeros menores que 10/
+    day < 10 ? day = '0'+ day : null;
+    month < 10 ? month = '0'+ month : null;
+
+    //Definindo valor do input do calendario para a data atual /
+    today = `${year}-${month}-${day}`;
+    calendar.setAttribute("min", today);
+    
 
     usuarioImg.style.cssText = `background: url(${img});
                                 background-size: cover;`
@@ -46,24 +64,48 @@ let createCard = (elementoPai, textoTarefa) =>{
     }
 
     contador++;
+
     //função para pegar a data do dia formatada
     let dataDia = function(){
+        let meses = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
         let today = new Date();
         let dd = today.getDate();
-        let mm = today.getMonth()+1; //Janeiro é 0.
+        let mm = today.getMonth().toString(); //Janeiro é 0.
         //formata ano para pegar apenas os dois últimos dígitos
         let yy = today.getFullYear().toString().substr(-2);
         //adiciona zero se o mês tiver apenas um dígito
-        if(dd<10) dd='0'+dd;
-        if(mm<10) mm='0'+mm;
-        return (dd+'/'+mm+'/'+yy);
+        // if(dd<10) dd='0'+dd;
+        // if(mm<10) mm='0'+mm;
+        return (dd+'-'+meses[mm]+'-'+yy);
         };
+
+
+    let definirPrazo = function(){
+       
+       var dataPrazo = document.getElementById('prazo').valueAsDate;       
+       if (dataPrazo == null){
+           dataPrazo = dataDia();
+           return dataPrazo;
+
+       } else {
+        let meses = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+        let dia = dataPrazo.getDate()+1;
+        let mes = dataPrazo.getMonth().toString();
+        let ano = dataPrazo.getFullYear().toString().substr(-2);
+        return dia + "-" + meses[mes] + "-" + ano;
+       }
+      
+    }
+
+      
+    
 
     elementoPai.innerHTML += `<li class="tarefa">
                                         <div class="not-done"></div>
                                         <div class="descripcion">
                                             <p class="nome">${novaTarefa}</p>
-                                            <p class="timestamp">Criada: ${dataDia()}</p>
+                                            <div><p class="timestamp">Criada: ${dataDia()}</p>
+                                            <p class="timestamp">Prazo: ${definirPrazo()}</p></div>
                                          </div>
                                          <div class="excluir"><i class="fas fa-trash"></i></div>
                                     </li>`;
