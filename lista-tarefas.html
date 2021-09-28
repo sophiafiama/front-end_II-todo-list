@@ -25,7 +25,7 @@
             <img class="user-image">
             <input type="checkbox" name="switch" id="switch">
             <label class="label-dark" for="switch"></label>
-            
+
         </div>
 
     </header>
@@ -33,7 +33,7 @@
     <form class="nova-tarefa">
         <div class="not-done "></div>
         <input type="text" placeholder="Nova tarefa" id="nova-tarefa">
-        <div id="validar"></div>        
+        <div id="validar"></div>
         <label for="prazo" id="titulo-prazo">Prazo:</label>
         <input id="prazo" type="date">
         <button id="adicionar-tarefa">
@@ -41,13 +41,16 @@
         </button>
     </form>
 
-    
+
     <ul class="tarefas-pendentes">
         <li class="tarefa">
             <div class="not-done"></div>
             <div class="descripcion">
                 <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19-abr-21</p>
+                <div>
+                    <p class="timestamp">Criada: 19-abr-21</p>
+                    <p class="timestamp">Prazo: 27-set-21</p>
+                </div>
             </div>
             <div class="excluir"><i class="fas fa-trash icon"></i></div>     
     </ul>
@@ -58,13 +61,16 @@
             <div class="not-done"></div>
             <div class="descripcion">
                 <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19-abr-21</p>
+                <div>
+                    <p class="timestamp">Criada: 19-abr-21</p>
+                    <p class="timestamp">Prazo: 27-set-21</p>
+                </div>
             </div>
             <div class="excluir"><i class="fas fa-trash icon"></i></div>
         </li>
     </ul>
     <script src="./js/appstyles.js"></script>
-    <script src="./js/appTarefas.js"></script>    
+    <script src="./js/appTarefas.js"></script>
 </body>
 
 </html>
