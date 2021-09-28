@@ -5,9 +5,9 @@
 .btn-dark{
   margin-left: 2rem;
   margin-bottom: 2rem;
- position: absolute; 
+  position: absolute; 
   z-index: 2;
-}
+  }
 
 input[type="checkbox"] {
   width: 0;

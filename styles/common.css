@@ -68,6 +68,7 @@ button {
   html{
     font-size: 12px ;
   }
+  
 }
 
 @media (min-width: 800px){
@@ -75,4 +76,13 @@ button {
   html{
     font-size: 15px ;
   }
+  
 }
+@media (max-width: 550px){
+  .btn-dark{
+    margin-left: 0;
+    margin-bottom: 0;
+    left: 40%;
+    margin-top: -1rem;
+    }
+  }

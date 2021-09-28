@@ -26,6 +26,7 @@ const bntCriar = document.getElementById("bntCriar");
 
 //Estrutura de Cadastro
 
+//Validação do nome
 nomeInput.addEventListener('keyup', () => {
     if (nomeInput.value.trim().length < 3) {
         nomeTexto.innerHTML = "Nome: *Deve ter no mínimo 3 letras."
@@ -39,6 +40,7 @@ nomeInput.addEventListener('keyup', () => {
             .then((json) => json.map(json => {
                 if (json.username == nomeInput.value) {
                     nomeInput.setAttribute('style', "border: 2px solid blue");
+                    nomeTexto.innerHTML = "Nome:"
                     idUsuario = json.id
                     validaNome = true;
                     nomeVerificador = json.username
@@ -46,12 +48,15 @@ nomeInput.addEventListener('keyup', () => {
             }))
         
     }
-    if (nomeInput.value != nomeVerificador) {
-        nomeInput.setAttribute('style', "border: 2px solid red");
+    //Quando é feito o map pela api é guardado o nome que está no cadastro, pois caso a pessoa edite o nome apos digitar um nome valido, seja novamente apresentado que o nome não está na lista de cadastro. 
+    if (nomeInput.value != nomeVerificador && nomeInput.value.trim().length > 2) {
+        nomeInput.setAttribute('style', "border: 2px solid red"); 
+        nomeTexto.innerHTML = "Nome: *Não consta no "+`<a href="https://jsonplaceholder.typicode.com/users">Cadastro.</a>`
+        validaNome = false;
     }
 })
 
-
+//Validação da senha
 senhaInput.addEventListener('keyup', () => {
     if (senhaInput.value.length < 4) {
         senhaTexto.innerHTML = "Senha: *Deve ter no mínimo 4 digitos."
@@ -76,6 +81,7 @@ senhaInput2.addEventListener('keyup', () => {
     }
 })
 
+//Validação do email
 emailInput.addEventListener('keyup', () => {
     if (!emailInput.checkValidity()) {
         emailTexto.innerHTML = "E-mail: *Não é valido."
@@ -88,6 +94,8 @@ emailInput.addEventListener('keyup', () => {
     }
 })
 
+
+//Estrutura para transformar uma imagem local(file) em uma URL codificada em base64 do arquivo.
 const imagemPrevia = document.querySelector('.imagemPrevia');
 const imagemInput = document.querySelector('.imagemInput');
 const imagemBotao = document.querySelector('.imagemBotao');
@@ -105,8 +113,11 @@ imagemInput.onchange = e => {
 };
 
 
+//Evento quando o usuario clica me Criar conta.
 bntCriar.addEventListener('click', (event) => {
     event.preventDefault();
+    
+    //Faz a validação, caso algum do itens estejá como false, é feito o foco no input
     if (validaNome && validaSenha && validaSenha2 && validaEmail) {
 
         localStorage.setItem('userId', JSON.stringify(idUsuario));
@@ -124,6 +135,7 @@ bntCriar.addEventListener('click', (event) => {
     }
 });
 
+//Consumindo a api dos dog, para gerar a primeira foto de perfil.
 window.onload = function () {
     fetch('https://dog.ceo/api/breeds/image/random')
         .then((response) => response.json())
