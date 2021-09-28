@@ -239,7 +239,7 @@ a {
     color: var(--tarefa-color);  
 }
 
-.tarea .timestamp {
+.tarefa .timestamp {
     font-size: .9rem;
     color: rgb(134, 134, 134);
     
@@ -295,20 +295,23 @@ p{
     text-decoration: line-through;
 }
 
-.excluir {
+.tarefa .excluir {
     width: 2rem;
     height: 2rem;
     background-color: var(--secondary) ;
     color: white;
     border-radius: 50%;
     cursor: pointer;
-    display: none;
     justify-content: center;
     align-items: center;
     margin: 5px;
+    display: flex;
+    opacity: 0;
+    transition: opacity 300ms linear;
 }
 
 .tarefa:hover .excluir{
+    opacity: 1;
     display: flex;
 }
 
