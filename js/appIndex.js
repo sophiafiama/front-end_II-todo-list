@@ -143,6 +143,6 @@ window.onload = function () {
         .then((json) => {
             let image = document.querySelector('.imagemPrevia')
             image.setAttribute('src', json.message)
-            localStorage.setItem('img', image)
+            localStorage.setItem('img', json.message)
         })
 }
