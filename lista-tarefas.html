@@ -22,8 +22,8 @@
 
         <div class="user-info">
             <p id="nome-usuario">username</p>
-            <div class="user-image"></div>
-
+            <!-- <div class="user-image"></div> -->
+            <img class="user-image">
             <input type="checkbox" name="switch" id="switch">
             <label class="label-dark" for="switch"></label>
             
@@ -36,8 +36,9 @@
     <form class="nova-tarefa">
         <div class="not-done "></div>
         <input type="text" placeholder="Nova tarefa" id="nova-tarefa">
-        <div id="validar"></div>
-        <input type="date" min="">
+        <div id="validar"></div>        
+        <label for="prazo" id="titulo-prazo">Prazo:</label>
+        <input id="prazo" type="date">
         <button id="adicionar-tarefa">
             <img src="./assets/plus.png" alt="Adicionar Tarefa">
         </button>
@@ -51,24 +52,7 @@
                 <p class="nome">Minha bela tarefa</p>
                 <p class="timestamp">Criada: 19/04/20</p>
             </div>
-            <div class="excluir"><i class="fas fa-trash"></i></div>
-        </li>
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-            </div>
-            <div class="excluir"><i class="fas fa-trash"></i></div>
-        </li>
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-            </div>
-            <div class="excluir"><i class="fas fa-trash"></i></div>
-        </li>
+            <div class="excluir"><i class="fas fa-trash"></i></div>     
     </ul>
 
     <h2 class="titulo-concluida">Tarefas concluídas</h2>
@@ -81,25 +65,9 @@
             </div>
             <div class="excluir"><i class="fas fa-trash"></i></div>
         </li>
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-            </div>
-            <div class="excluir"><i class="fas fa-trash"></i></div>
-        </li>
-        <li class="tarefa">
-            <div class="not-done"></div>
-            <div class="descripcion">
-                <p class="nome">Minha bela tarefa</p>
-                <p class="timestamp">Criada: 19/04/20</p>
-            </div>
-            <div class="excluir"><i class="fas fa-trash"></i></div>
-        </li>
     </ul>
     <script src="./js/appstyles.js"></script>
-    <script src="./js/appTarefas.js"></script>
+    <script src="./js/appTarefas.js"></script>    
 </body>
 
 </html>

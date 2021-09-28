@@ -7,10 +7,11 @@
   --bg-form:white;
   --bg-color:white;
   --btn-color:white;
-  --logo-color:grey;
+  --logo-color:white;
   --focus-color: lightgrey;
   --tittle-color:rgb(116, 116, 116);
   --label-color:black;
+  --tarefa-color:grey;
 
 }
 
@@ -22,10 +23,11 @@
   --bg-form:rgba(0, 0, 0, 0.562);
   --bg-color:black;
   --btn-color:white;
-  --logo-color:grey;
+  --logo-color:black;
   --focus-color: #8E64C5;
   --tittle-color:lightgrey;
   --label-color:white;
+  --tarefa-color:grey;
 }
 
 

@@ -76,19 +76,30 @@ a {
 
 .user-info p {
     text-transform: capitalize;
+    color: var(--bg-color);
 }
 
 .user-info .user-image {
     height: 2rem;
     width: 2rem;
-    border-radius: 50%;
-    background-color: (--bg-color);
-    border: 1.5px solid rgba(255, 255, 255);
-    margin-left: .7rem;
+    background-color: var(--bg-color);
 }
 .user-image{
-    margin-right: 1rem;
+    margin-right: .7rem;
+    object-fit: cover;
+    z-index: 2;
+    border-radius: 50%;
+    
+    border: 1.5px solid var(--logo-color);
+    margin-left: .7rem;
 }
+
+#titulo-prazo {
+    color: grey;
+    margin: 1rem;
+
+}
+
 
 /* Novas tarefa ----------------------------------------------------------- */
 
@@ -233,7 +244,7 @@ a {
 }
 
 .tarefa .nome {
-    color: var(--logo-color);
+    color: var(--tarefa-color);
     
 }
 
@@ -244,7 +255,7 @@ a {
 }
 /* cor da data */
 p{
-    color: var(--logo-color)
+    color: grey
 }
 
 
