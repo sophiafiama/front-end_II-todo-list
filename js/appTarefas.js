@@ -116,6 +116,7 @@ btnAddTarefa.addEventListener('click', function (){
     let tarefa = document.getElementById('nova-tarefa');
     if (tarefa.value.trim().length >=10){
         createCard(tarefasPendentes)
+        tarefa.value = "";
         validar.innerHTML = "";
         tarefa.style.cssText="border-bottom: 1px solid lightgrey;"
     } else{
