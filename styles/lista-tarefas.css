@@ -64,6 +64,22 @@ a {
     color: var(--logo-color);
 }
 
+input[type="date"]{
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    font-family: 'Lato', sans-serif;
+    color: #000;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #8e64c55d;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
 .user-info {
     display: flex;
     justify-content: center;
@@ -310,7 +326,7 @@ p{
     align-items: center;
     margin: 5px;
     display: flex;
-    opacity: 5;
+    opacity: 0;
     transition: opacity 300ms linear;
 }
 
