@@ -94,6 +94,13 @@ a {
     margin-left: .7rem;
 }
 
+#titulo-prazo {
+    color: grey;
+    margin: 1rem;
+
+}
+
+
 /* Novas tarefa ----------------------------------------------------------- */
 
 .nova-tarefa {
