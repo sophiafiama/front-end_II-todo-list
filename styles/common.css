@@ -11,6 +11,7 @@
   --focus-color: lightgrey;
   --tittle-color:rgb(116, 116, 116);
   --label-color:black;
+  --tarefa-color:grey;
 
 }
 
@@ -26,6 +27,7 @@
   --focus-color: #8E64C5;
   --tittle-color:lightgrey;
   --label-color:white;
+  --tarefa-color:grey;
 }
 
 

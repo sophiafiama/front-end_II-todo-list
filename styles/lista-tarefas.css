@@ -237,7 +237,7 @@ a {
 }
 
 .tarefa .nome {
-    color: var(--logo-color);
+    color: var(--tarefa-color);
     
 }
 
