@@ -44,7 +44,6 @@ nomeInput.addEventListener('keyup', () => {
 
                 }
             }))
-
     }
 })
 
@@ -99,18 +98,13 @@ imagemInput.onchange = e => {
         localStorage.setItem('img', e.target.result)
     }
     reader.readAsDataURL(fileToUpload);
-
 };
-
 
 
 bntCriar.addEventListener('click', (event) => {
     event.preventDefault();
     if (validaNome && validaSenha && validaSenha2 && validaEmail) {
 
-
-
-        
         localStorage.setItem('usuario', JSON.stringify(nomeInput.value));
         window.location = "lista-tarefas.html";
 
