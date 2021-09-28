@@ -90,7 +90,7 @@ a {
     z-index: 2;
     border-radius: 50%;
     
-    border: 1.5px solid rgba(255, 255, 255);
+    border: 1.5px solid var(--logo-color);
     margin-left: .7rem;
 }
 
@@ -248,7 +248,7 @@ a {
 }
 /* cor da data */
 p{
-    color: var(--logo-color)
+    color: grey
 }
 
 
