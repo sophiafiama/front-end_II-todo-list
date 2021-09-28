@@ -28,9 +28,7 @@ window.onload =  function(){
     today = `${year}-${month}-${day}`;
     calendar.setAttribute("min", today);
     
-
-    usuarioImg.style.cssText = `background: url(${img});
-                                background-size: cover;`
+    usuarioImg.src = img;
     
 
     //pega dados da api de tarefas
@@ -98,8 +96,6 @@ let createCard = (elementoPai, textoTarefa) =>{
     }
 
       
-    
-
     elementoPai.innerHTML += `<li class="tarefa">
                                         <div class="not-done"></div>
                                         <div class="descripcion">

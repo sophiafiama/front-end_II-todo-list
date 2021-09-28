@@ -55,8 +55,6 @@ input[type="checkbox"] {
     width: 1.5rem;
   }
   
-
-
 a {
     display: block;
     width: fit-content;
@@ -97,7 +95,6 @@ a {
 #titulo-prazo {
     color: grey;
     margin: 1rem;
-
 }
 
 
@@ -155,9 +152,6 @@ a {
     
 }
 
-
-
-
 .not-done {
     width: 2rem;
     height: 2rem;
@@ -175,8 +169,7 @@ a {
     left: 5rem;
 }
 
-
-/* Lista de tarefas ----------------------------------------------------------- */
+/* Lista de tarefas --------------------------------------------------------- */
 
 .tarefas-pendentes {
     display: flex;
@@ -192,7 +185,6 @@ a {
     align-items: center;
     margin-bottom: 1.5rem;
     background-color: var(--bg-color)
-    
 }
 
 .tarefa .not-done {
@@ -244,11 +236,10 @@ a {
 }
 
 .tarefa .nome {
-    color: var(--tarefa-color);
-    
+    color: var(--tarefa-color);  
 }
 
-.tarea .timestamp {
+.tarefa .timestamp {
     font-size: .9rem;
     color: rgb(134, 134, 134);
     
@@ -304,20 +295,23 @@ p{
     text-decoration: line-through;
 }
 
-.excluir {
+.tarefa .excluir {
     width: 2rem;
     height: 2rem;
     background-color: var(--secondary) ;
     color: white;
     border-radius: 50%;
     cursor: pointer;
-    display: none;
     justify-content: center;
     align-items: center;
     margin: 5px;
+    display: flex;
+    opacity: 0;
+    transition: opacity 300ms linear;
 }
 
 .tarefa:hover .excluir{
+    opacity: 1;
     display: flex;
 }
 
